@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ben Keppler Journal</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div class="nav">
+            <a href="index.html">Ben Keppler</a>
+            <div class="nav-right">
+                <span id="user-info" class="user-info" style="display: none;">
+                    Welcome, <span id="username"></span>!
+                    <button id="logout-btn" class="logout-btn">Logout</button>
+                </span>
+                <a href="login.html" id="login-link">Login</a>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="filter">
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label for="sort-select">Sort by:</label>
+                        <select id="sort-select">
+                            <option value="new-old">Newest First</option>
+                            <option value="old-new">Oldest First</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="search-input">Search:</label>
+                        <input type="text" id="search-input" placeholder="Search articles..." />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="viewer">
+                <div id="articles-grid" class="articles-grid">
+                    <!-- Articles will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Article Modal -->
+        <div id="article-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modal-article-content">
+                    <!-- Full article content will be loaded here -->
+                    
+                    <!-- Comments Section -->
+                    <div id="comments-section">
+                        <div class="comments-container">
+                            <h3>Comments</h3>
+                            <div id="comments-list">
+                                <!-- Comments will be loaded here -->
+                            </div>
+                            <div id="comment-form" style="display: none;">
+                                <textarea id="comment-text" placeholder="Write your comment here..." rows="3"></textarea>
+                                <button id="submit-comment">Post Comment</button>
+                            </div>
+                            <div id="login-prompt" class="login-prompt">
+                                <p>Please <a href="login.html">login</a> to leave a comment.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
